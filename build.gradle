@@ -37,9 +37,9 @@ task main_page_tests(type: Test) {
     }
 }
 
-task deposite_page_tests(type: Test) {
+task deposit_page_tests(type: Test) {
     useJUnitPlatform {
-        includeTags("Deposite")
+        includeTags("Deposit")
     }
 }
 
