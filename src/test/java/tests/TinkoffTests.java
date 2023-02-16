@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -9,98 +10,219 @@ import tests.data.Locale;
 
 import java.util.List;
 
+import static io.qameta.allure.Allure.step;
+
 public class TinkoffTests extends TestBase {
-    
+
     @MethodSource
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
-    void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal(
+    public void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal(
             Locale locale,
             List<String> buttons
     ) {
-        mainPage.openPage();
-        mainPage.checkRuLocale(testData.navigationMenuRu);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Проверяем содержание навигационной строки ", () -> {
+            mainPage.checkRuLocale(testData.navigationMenuRu);
+        });
     }
 
 
     @MethodSource
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
     void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal(
             Locale locale,
             List<String> buttons
     ) {
-        mainPage.openEnPage();
-        mainPage.checkEnLocale(testData.getNavigationMenuEn);
+        step("Открываем главную страницу En локали ", () -> {
+            mainPage.openEnPage();
+        });
+        step("Проверяем содержание навигационной строки ", () -> {
+            mainPage.checkEnLocale(testData.getNavigationMenuEn);
+        });
     }
 
     @Test
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnCreditCards() {
-        mainPage.openPage();
-        mainPage.searchingCreditCardRecommendation(testData.card);
-        mainPage.openCreditCardLink();
-        mainPage.checkCreditCardPageTitle(testData.cardPageTitle);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Ищем в рекомендациях " + testData.card, () -> {
+            mainPage.searchingCreditCardRecommendation(testData.card);
+        });
+        step("Переходим к рекомендации ", () -> {
+            mainPage.openCreditCardLink();
+        });
+        step("Проверяем, что заголовок открытой страницы " + testData.cardPageTitle, () -> {
+            mainPage.checkCreditCardPageTitle(testData.cardPageTitle);
+        });
     }
 
     @Test
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnInvestments() {
-        mainPage.openPage();
-        mainPage.searchingInvestRecommendation(testData.invest);
-        mainPage.openInvestLink();
-        mainPage.checkInvestTitle(testData.investPageTitle);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Ищем в рекомендациях " + testData.invest, () -> {
+            mainPage.searchingInvestRecommendation(testData.invest);
+        });
+        step("Переходим к рекомендации ", () -> {
+            mainPage.openInvestLink();
+        });
+        step("Проверяем, что заголовок открытой страницы " + testData.investPageTitle, () -> {
+            mainPage.checkInvestTitle(testData.investPageTitle);
+        });
     }
 
     @Test
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnOsago() {
-        mainPage.openPage();
-        mainPage.searchingOsagoRecommendation(testData.osago);
-        mainPage.openOsagoLink();
-        mainPage.checkOsagoTitle(testData.osagoPageTitle);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Ищем в рекомендациях " + testData.osago, () -> {
+            mainPage.searchingOsagoRecommendation(testData.osago);
+        });
+        step("Переходим к рекомендации ", () -> {
+            mainPage.openOsagoLink();
+        });
+        step("Проверяем, что заголовок открытой страницы " + testData.osagoPageTitle, () -> {
+            mainPage.checkOsagoTitle(testData.osagoPageTitle);
+        });
     }
 
     @Test
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnSim() {
-        mainPage.openPage();
-        mainPage.searchingSimRecommendation(testData.sim);
-        mainPage.openSimLink();
-        mainPage.checkSimTitle(testData.simPageTitle);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Ищем в рекомендациях " + testData.sim, () -> {
+            mainPage.searchingOsagoRecommendation(testData.sim);
+        });
+        step("Переходим к рекомендации ", () -> {
+            mainPage.openSimLink();
+        });
+        step("Проверяем, что заголовок открытой страницы " + testData.simPageTitle, () -> {
+            mainPage.checkSimTitle(testData.simPageTitle);
+        });
     }
 
     @Test
     @Tag("MainPage, Regression")
+    @Feature("Главная страница")
+    @Story("Наполнение контента")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnDeposit() {
-        mainPage.openPage();
-        mainPage.searchingDepositRecommendation(testData.deposit);
-        mainPage.openDepositeLink();
-        mainPage.checkDepositeTitle(testData.depositPageTitle);
+        step("Открываем главную страницу ", () -> {
+            mainPage.openPage();
+        });
+        step("Ищем в рекомендациях " + testData.deposit, () -> {
+            mainPage.searchingDepositRecommendation(testData.deposit);
+        });
+        step("Переходим к рекомендации ", () -> {
+            mainPage.openDepositeLink();
+        });
+        step("Проверяем, что заголовок открытой страницы " + testData.depositPageTitle, () -> {
+            mainPage.checkDepositeTitle(testData.depositPageTitle);
+        });
     }
 
     @Test
-    @Tag("Deposite, Regression")
+    @Tag("Deposit, Regression")
+    @Feature("Калькулятор вклада")
+    @Story("Проверка расчета")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void depositCalculatorWorksCorrectly() {
-        depositPage.openDepositePage(testData.depositePageLink);
-        depositPage.enterAmount(testData.amount);
-        depositPage.enterPeriod(testData.period);
-        depositPage.turnOffLeavePercentCheckbox();
-        depositPage.checkTotalSum(testData.totalSum);
+        step("Открываем страницу вклада", () -> {
+            depositPage.openDepositePage(testData.depositePageLink);
+        });
+        step("Вводим сумму вклада" + testData.amount + "руб", () -> {
+            depositPage.enterAmount(testData.amount);
+        });
+        step("Вводим срок вклада " + testData.period + "мес.",() -> {
+            depositPage.enterPeriod(testData.period);
+        });
+        step("Убираем чекбокс 'Оставлять проценты' ", () -> {
+            depositPage.turnOffLeavePercentCheckbox();
+        });
+        step("Проверяем, что итоговая сумма ровна " + testData.totalSum + "руб",() -> {
+            depositPage.checkTotalSum(testData.totalSum);
+        });
     }
 
     @Disabled
     @Test
     @Tag("Career, Regression")
+    @Feature("Карьера в Тинькофф")
+    @Story("Заполнение формы")
+    @Owner("Kopytov-Ilya")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void correctFillingOfVacancyForm() {
-        careerPage.openCareerPage(testData.careerPageLink);
-        careerPage.setFio(testData.fio);
-        careerPage.setCity(testData.city);
-        careerPage.setEmail(testData.email);
-        careerPage.setPhoneNumber(testData.phoneNumber);
-        careerPage.uploadResume(testData.resume);
-        //careerPage.approveConditions();
-        careerPage.sendForm();
+        step("Открываем страницу с вакансией", () -> {
+            careerPage.openCareerPage(testData.careerPageLink);
+        });
+        step("Вводим ФИО" + testData.fio, () -> {
+            careerPage.setFio(testData.fio);
+        });
+        step("Выбираем город " + testData.city,() -> {
+            careerPage.setCity(testData.city);
+        });
+        step("Вводим email " + testData.email, () -> {
+            careerPage.setEmail(testData.email);
+        });
+        step("Вводим телефонный номер " + testData.phoneNumber,() -> {
+            careerPage.setPhoneNumber(testData.phoneNumber);
+        });
+        step("Загружаем резюме " + testData.resume,() -> {
+            careerPage.uploadResume(testData.resume);
+        });
+        step("Соглашаемся с условиями ",() -> {
+            //careerPage.approveConditions();
+        });
+        step("Отправляем форму ",() -> {
+            careerPage.sendForm();
+        });
     }
 }
 
