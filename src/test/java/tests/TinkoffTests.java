@@ -2,6 +2,7 @@ package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,7 +16,8 @@ import static io.qameta.allure.Allure.step;
 public class TinkoffTests extends TestBase {
 
     @MethodSource
-    @Tag("MainPage, Regression")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -36,7 +38,8 @@ public class TinkoffTests extends TestBase {
 
 
     @MethodSource
-    @Tag("MainPage, Regression")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -56,7 +59,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("MainPage, Regression")
+    @DisplayName("Проверка рекомендации кредитной карты")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -78,7 +83,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("MainPage, Regression")
+    @DisplayName("Проверка рекомендации инвестиций")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -100,7 +107,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("MainPage, Regression")
+    @DisplayName("Проверка рекомендации ОСАГО")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -122,7 +131,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("MainPage, Regression")
+    @DisplayName("Проверка рекомендации SIM карты от Тинькофф")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -144,7 +155,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("MainPage, Regression")
+    @DisplayName("Проверка рекомендации вкладов")
+    @Tag("MainPage")
+    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
@@ -166,7 +179,9 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
-    @Tag("Deposit, Regression")
+    @DisplayName("Проверка калькулятора вклада")
+    @Tag("Deposit")
+    @Tag("Regression")
     @Feature("Калькулятор вклада")
     @Story("Проверка расчета")
     @Owner("Kopytov-Ilya")
@@ -179,20 +194,22 @@ public class TinkoffTests extends TestBase {
         step("Вводим сумму вклада" + testData.amount + "руб", () -> {
             depositPage.enterAmount(testData.amount);
         });
-        step("Вводим срок вклада " + testData.period + "мес.",() -> {
+        step("Вводим срок вклада " + testData.period + "мес.", () -> {
             depositPage.enterPeriod(testData.period);
         });
         step("Убираем чекбокс 'Оставлять проценты' ", () -> {
             depositPage.turnOffLeavePercentCheckbox();
         });
-        step("Проверяем, что итоговая сумма ровна " + testData.totalSum + "руб",() -> {
+        step("Проверяем, что итоговая сумма ровна " + testData.totalSum + "руб", () -> {
             depositPage.checkTotalSum(testData.totalSum);
         });
     }
 
     @Disabled
     @Test
-    @Tag("Career, Regression")
+    @DisplayName("Заполнение формы отклика на вакансию")
+    @Tag("Career")
+    @Tag("Regression")
     @Feature("Карьера в Тинькофф")
     @Story("Заполнение формы")
     @Owner("Kopytov-Ilya")
@@ -205,22 +222,22 @@ public class TinkoffTests extends TestBase {
         step("Вводим ФИО" + testData.fio, () -> {
             careerPage.setFio(testData.fio);
         });
-        step("Выбираем город " + testData.city,() -> {
+        step("Выбираем город " + testData.city, () -> {
             careerPage.setCity(testData.city);
         });
         step("Вводим email " + testData.email, () -> {
             careerPage.setEmail(testData.email);
         });
-        step("Вводим телефонный номер " + testData.phoneNumber,() -> {
+        step("Вводим телефонный номер " + testData.phoneNumber, () -> {
             careerPage.setPhoneNumber(testData.phoneNumber);
         });
-        step("Загружаем резюме " + testData.resume,() -> {
+        step("Загружаем резюме " + testData.resume, () -> {
             careerPage.uploadResume(testData.resume);
         });
-        step("Соглашаемся с условиями ",() -> {
+        step("Соглашаемся с условиями ", () -> {
             //careerPage.approveConditions();
         });
-        step("Отправляем форму ",() -> {
+        step("Отправляем форму ", () -> {
             careerPage.sendForm();
         });
     }
