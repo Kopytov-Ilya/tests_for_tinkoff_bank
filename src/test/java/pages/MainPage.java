@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage {
+
     String MainPageEnUrl = "https://tinkoff-group.com/";
 
     private ElementsCollection

@@ -34,4 +34,4 @@ draft.txt
 !allure-notifications-4.2.1.jar
 !build
 # Project exclude paths
-/build/
+!/build/
