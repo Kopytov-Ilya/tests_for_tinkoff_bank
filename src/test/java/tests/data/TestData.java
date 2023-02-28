@@ -12,7 +12,7 @@ public class TestData {
             osago = "Страхование ОСАГО",
             osagoPageTitle = "ОСАГО с кэшбэком до 10%",
             sim = "Сим-карта Тинькофф",
-            simPageTitle = "Попробуйте сим-карту Тинькофф",
+            simPageTitle = "Безлимит от Тинькофф",
             deposit = "Вклады",
             depositPageTitle = "Вклады",
             amount = "150000",
