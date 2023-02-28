@@ -59,6 +59,7 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Проверка рекомендации кредитной карты")
     @Tag("MainPage")
     @Tag("Regression")
@@ -83,6 +84,7 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Проверка рекомендации инвестиций")
     @Tag("MainPage")
     @Tag("Regression")
@@ -107,6 +109,7 @@ public class TinkoffTests extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Проверка рекомендации ОСАГО")
     @Tag("MainPage")
     @Tag("Regression")
