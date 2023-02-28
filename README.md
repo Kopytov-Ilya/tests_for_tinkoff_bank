@@ -143,5 +143,5 @@ gradle clean run_tests
 
 > К каждому тесту в отчете прилагается видео
 <p align="center">
-  <img src="images/video/Video.mp4">
+  <img src="images/video/Video.gif">
 </p>
