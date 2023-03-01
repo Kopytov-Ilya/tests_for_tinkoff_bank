@@ -68,10 +68,11 @@ gradle clean run_tests
 ### Удаленный запуск тестов
 
 ```
-./gradlew clean run_tests \
--Dbrowser=${BROWSER} \
--Dversion=${VERSION} \
--Dresolution=${RESOLUTION} \
+clean
+${TASK}
+-Dbrowser=${BROWSER}
+-Dversion=${VERSION}
+-Dresolution=${RESOLUTION}
 -Dremote=${REMOTE}
 ```
 
