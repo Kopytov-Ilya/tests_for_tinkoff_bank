@@ -6,14 +6,29 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import tests.data.Locale;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static io.qameta.allure.Allure.step;
 
 public class TinkoffTests extends TestBase {
+
+    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal() {
+        return Stream.of(Arguments.of(Locale.RU, List.of("Банк Бизнес Касса Инвестиции Сим-карта Страхование " +
+                "Путешествия Город Долями", "Кредитные карты Дебетовые карты Ипотека Вклады " +
+                "Накопительный счет Премиум Подписка Кредит наличными Автокредит"))
+        );
+    }
+
+    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal() {
+        return Stream.of(Arguments.of(Locale.EN, List.of("Company info Financials Press Center Corporate Governance " +
+                "Capital Markets Events"))
+        );
+    }
 
     @MethodSource
     @Tag("MainPage")
@@ -44,7 +59,7 @@ public class TinkoffTests extends TestBase {
     @Story("Наполнение контента")
     @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.CRITICAL)
-    @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
+    @Link(value = "TinkoffBank", url = "https://tinkoff-group.com")
     @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
     void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal(
             Locale locale,

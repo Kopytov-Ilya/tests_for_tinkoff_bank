@@ -6,18 +6,13 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.params.provider.Arguments;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.CareerPage;
 import pages.DepositPage;
 import pages.MainPage;
 import helpers.Attach;
 
-import tests.data.Locale;
 import tests.data.TestData;
-
-import java.util.List;
-import java.util.stream.Stream;
 
 public class TestBase {
 
@@ -25,19 +20,6 @@ public class TestBase {
     CareerPage careerPage = new CareerPage();
     DepositPage depositPage = new DepositPage();
     MainPage mainPage = new MainPage();
-
-    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal() {
-        return Stream.of(Arguments.of(Locale.RU, List.of("Банк Бизнес Касса Инвестиции Сим-карта Страхование " +
-                "Путешествия Город Долями", "Кредитные карты Дебетовые карты Ипотека Вклады " +
-                "Накопительный счет Премиум Подписка Кредит наличными Автокредит"))
-        );
-    }
-
-    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal() {
-        return Stream.of(Arguments.of(Locale.EN, List.of("Company info Financials Press Center Corporate Governance " +
-                "Capital Markets Events"))
-        );
-    }
 
     @BeforeAll
     static void beforeAll() {
