@@ -3,6 +3,8 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
+import java.util.List;
+
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -32,9 +34,8 @@ public class MainPage {
         return this;
     }
 
-    public MainPage checkRuLocale(String value) {
+    public MainPage checkLocale(List<String> value) {
         navigationMenu.contains(texts(value));
-
         return this;
     }
 

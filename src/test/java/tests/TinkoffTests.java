@@ -17,16 +17,14 @@ import static io.qameta.allure.Allure.step;
 
 public class TinkoffTests extends TestBase {
 
-    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal() {
-        return Stream.of(Arguments.of(Locale.RU, List.of("Банк Бизнес Касса Инвестиции Сим-карта Страхование " +
-                "Путешествия Город Долями", "Кредитные карты Дебетовые карты Ипотека Вклады " +
-                "Накопительный счет Премиум Подписка Кредит наличными Автокредит"))
-        );
-    }
 
-    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal() {
-        return Stream.of(Arguments.of(Locale.EN, List.of("Company info Financials Press Center Corporate Governance " +
-                "Capital Markets Events"))
+
+    static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForLocal() {
+        return Stream.of(Arguments.of(Locale.RU, List.of("Банк Бизнес Касса Инвестиции Сим-карта Страхование " +
+                        "Путешествия Город Долями", "Кредитные карты Дебетовые карты Ипотека Вклады " +
+                        "Накопительный счет Премиум Подписка Кредит наличными Автокредит")),
+                Arguments.of(Locale.EN, List.of("Company info Financials Press Center Corporate Governance " +
+                        "Capital Markets Events"))
         );
     }
 
@@ -39,7 +37,7 @@ public class TinkoffTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
-    public void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForRuLocal(
+    public void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForLocal(
             Locale locale,
             List<String> buttons
     ) {
@@ -47,29 +45,7 @@ public class TinkoffTests extends TestBase {
             mainPage.openPage();
         });
         step("Проверяем содержание навигационной строки ", () -> {
-            mainPage.checkRuLocale(testData.navigationMenuRu);
-        });
-    }
-
-
-    @MethodSource
-    @Tag("MainPage")
-    @Tag("Regression")
-    @Feature("Главная страница")
-    @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
-    @Severity(SeverityLevel.CRITICAL)
-    @Link(value = "TinkoffBank", url = "https://tinkoff-group.com")
-    @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
-    void tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForEnLocal(
-            Locale locale,
-            List<String> buttons
-    ) {
-        step("Открываем главную страницу En локали ", () -> {
-            mainPage.openEnPage();
-        });
-        step("Проверяем содержание навигационной строки ", () -> {
-            mainPage.checkEnLocale(testData.getNavigationMenuEn);
+            mainPage.checkLocale(buttons);
         });
     }
 
