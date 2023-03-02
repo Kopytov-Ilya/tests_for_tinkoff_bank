@@ -39,18 +39,6 @@ public class MainPage {
         return this;
     }
 
-    public MainPage openEnPage() {
-        open(MainPageEnUrl);
-
-        return this;
-    }
-
-    public MainPage checkEnLocale(String value) {
-        navigationMenu.shouldHave(texts(value));
-
-        return this;
-    }
-
     public MainPage searchingCreditCardRecommendation(String value) {
         recommendationField.findBy(text(value)).shouldBe(visible);
 

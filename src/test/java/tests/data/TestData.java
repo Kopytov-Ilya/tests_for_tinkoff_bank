@@ -3,8 +3,6 @@ package tests.data;
 public class TestData {
 
     public String
-            navigationMenuRu = "Банк Бизнес Касса Инвестиции Сим-карта Страхование Путешествия Город Долями, Кредитные карты Дебетовые карты Ипотека Вклады и счета Премиум Подписка Кредит наличными Автокредит Рефинансирование",
-            getNavigationMenuEn = "Company info Financials Press Center Corporate Governance Capital Markets Events",
             card = "Кредитная карта Тинькофф Платинум",
             cardPageTitle = "Кредитная карта — не выходя из дома",
             invest = "Тинькофф инвестиции",
