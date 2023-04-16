@@ -15,9 +15,9 @@ import java.util.stream.Stream;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("Kopytov-Ilya")
+
 public class TinkoffTests extends TestBase {
-
-
 
     static Stream<Arguments> tinkoffMainPageShouldContainCorrectButtonsOnNavigationMenuForLocal() {
         return Stream.of(Arguments.of(Locale.RU, List.of("Банк Бизнес Касса Инвестиции Сим-карта Страхование " +
@@ -30,10 +30,8 @@ public class TinkoffTests extends TestBase {
 
     @MethodSource
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.CRITICAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     @ParameterizedTest(name = "Для локали {0} отображаются пункты меню {1}")
@@ -53,10 +51,8 @@ public class TinkoffTests extends TestBase {
     @Disabled
     @DisplayName("Проверка рекомендации кредитной карты")
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnCreditCards() {
@@ -78,10 +74,8 @@ public class TinkoffTests extends TestBase {
     @Disabled
     @DisplayName("Проверка рекомендации инвестиций")
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnInvestments() {
@@ -103,10 +97,8 @@ public class TinkoffTests extends TestBase {
     @Disabled
     @DisplayName("Проверка рекомендации ОСАГО")
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnOsago() {
@@ -127,10 +119,8 @@ public class TinkoffTests extends TestBase {
     @Test
     @DisplayName("Проверка рекомендации SIM карты от Тинькофф")
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnSim() {
@@ -151,10 +141,8 @@ public class TinkoffTests extends TestBase {
     @Test
     @DisplayName("Проверка рекомендации вкладов")
     @Tag("MainPage")
-    @Tag("Regression")
     @Feature("Главная страница")
     @Story("Наполнение контента")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void inRecommendedProductsShouldBeLinkOnDeposit() {
@@ -175,10 +163,8 @@ public class TinkoffTests extends TestBase {
     @Test
     @DisplayName("Проверка калькулятора вклада")
     @Tag("Deposit")
-    @Tag("Regression")
     @Feature("Калькулятор вклада")
     @Story("Проверка расчета")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.CRITICAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void depositCalculatorWorksCorrectly() {
@@ -203,10 +189,8 @@ public class TinkoffTests extends TestBase {
     @Test
     @DisplayName("Заполнение формы отклика на вакансию")
     @Tag("Career")
-    @Tag("Regression")
     @Feature("Карьера в Тинькофф")
     @Story("Заполнение формы")
-    @Owner("Kopytov-Ilya")
     @Severity(SeverityLevel.NORMAL)
     @Link(value = "TinkoffBank", url = "https://www.tinkoff.ru/")
     void correctFillingOfVacancyForm() {

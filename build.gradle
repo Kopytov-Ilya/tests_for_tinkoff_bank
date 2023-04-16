@@ -25,12 +25,6 @@ tasks.withType(Test) {
     useJUnitPlatform()
 }
 
-task regression_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags("Regression")
-    }
-}
-
 task main_page_tests(type: Test) {
     useJUnitPlatform {
         includeTags("MainPage")
