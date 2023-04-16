@@ -1,5 +1,11 @@
 <h1 >Проект автоматизации UI для сайта <a href="https://www.tinkoff.ru ">tinkoff.ru</a></h1>
 
+<br>
+<p align="center">
+<img width="60%" title="Tinkoff" src="images/logo/Tinkoff.png">
+</p>
+<br>
+
 ## Содержание
 
 * <a href="#tools">Технологии и инструменты</a>
@@ -26,6 +32,8 @@
 <img width="6%" title="GitHub" src="images/logo/GitHub.png">
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.png">
 <img width="6%" title="Allure TestOps" src="images/logo/AllureTestOps.svg">
+<img width="6%" title="JIRA" src="images/logo/JIRA.svg">  
+<img width="6%" title="Telegram" src="images/logo/Telegram.svg">  
 </p>
 
 Автотесты написаны на <code>Java</code> с использованием <code>JUnit 5</code> и <code>Gradle</code>.
